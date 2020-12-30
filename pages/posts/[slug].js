@@ -9,24 +9,29 @@ function PostTemplate({ content, data }) {
   return (
     <>
       <h1>{frontmatter.title}</h1>
+      <h2>{frontmatter.date}</h2>
       <ReactMarkdown source={content} />
     </>
   )
 }
 
-PostTemplate.getInitialProps = async (context) => {
-  const { slug } = context.query
+export async function getStaticPaths() {
+  const fs = require('fs')
+  const path = require('path')
+  const mdfiles = fs
+    .readdirSync(`${process.cwd()}/content`, 'utf-8')
+    .filter((f) => f.endsWith('.md'))
+  const paths = mdfiles.map(
+    (f) => `/posts/${path.basename(f, path.extname(f))}`
+  )
+  return { paths, fallback: false }
+}
 
-  // Import our .md file using the `slug` from the URL
+export async function getStaticProps({ params }) {
+  const slug = params.slug
   const content = await import(`../../content/${slug}.md`)
-
-  // Parse .md data through `matter`
   const data = matter(content.default)
-
-  // Pass data to our component props
-  return { ...data }
-
-  return { slug }
+  return { props: { content: data.content, data: data.data } }
 }
 
 export default PostTemplate
