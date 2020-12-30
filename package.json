@@ -2,11 +2,15 @@
   "name": "sikeda107.github.io",
   "version": "0.1.0",
   "private": true,
+  "browser": {
+    "fs": false
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "serve": "yarn export && serve ./out"
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
@@ -17,6 +21,7 @@
     "react-markdown": "^5.0.3"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "serve": "^11.3.2"
   }
 }
