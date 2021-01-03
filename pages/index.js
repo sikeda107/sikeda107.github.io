@@ -1,6 +1,11 @@
 import React from 'react'
-import Blog from '../components/Blog'
+import Layout from '../components/Layout'
+import Home from '../components/Home'
 
 export default function App() {
-  return <Blog></Blog>
+  return (
+    <Layout>
+      <Home></Home>
+    </Layout>
+  )
 }
