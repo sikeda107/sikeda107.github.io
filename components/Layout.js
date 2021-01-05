@@ -3,6 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import Sidebar from './Sidebar'
 
 export default function Layout(props) {
   return (
@@ -23,7 +24,7 @@ export default function Layout(props) {
         <main>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
-              <h1>left</h1>
+              <Sidebar></Sidebar>
             </Grid>
             <Grid item xs={12} md={8}>
               {props.children}
