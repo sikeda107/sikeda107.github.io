@@ -40,7 +40,7 @@ export default function Sidebar(props) {
           </Typography>
           <Grid container direction="column" spacing={1}>
             {linkList.map((link) => (
-              <Grid item>
+              <Grid item key={link.title}>
                 <NextLink key={link.title} href={link.url}>
                   {link.title}
                 </NextLink>
@@ -53,13 +53,15 @@ export default function Sidebar(props) {
             SNS
           </Typography>
           {socialList.map((social) => (
-            <NextLink key={social} href={social.url}>
-              <Grid container direction="row" spacing={1} alignItems="center">
-                <Grid item>
-                  <social.icon />
+            <NextLink key={social.name} href={social.url}>
+              <a target="_blank">
+                <Grid container direction="row" spacing={1} alignItems="center">
+                  <Grid item>
+                    <social.icon />
+                  </Grid>
+                  <Grid item>{social.name}</Grid>
                 </Grid>
-                <Grid item>{social.name}</Grid>
-              </Grid>
+              </a>
             </NextLink>
           ))}
         </Grid>
