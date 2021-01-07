@@ -10,6 +10,7 @@ export default function Sidebar(props) {
   const linkList = [
     { title: 'HOME', url: '/' },
     { title: 'PROFILE', url: '/profile' },
+    { title: 'POSTS', url: '/posts' },
     { title: 'PROJECTS', url: '/projects' },
   ]
   const socialList = [
