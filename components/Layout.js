@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Sidebar from './Sidebar'
+import Footer from './Footer'
 
 export default function Layout(props) {
   return (
@@ -24,7 +25,7 @@ export default function Layout(props) {
         <main>
           <Grid container spacing={5}>
             <Grid item xs={12} md={4}>
-              <Sidebar></Sidebar>
+              <Sidebar />
             </Grid>
             <Grid item xs={12} md={8}>
               {props.children}
@@ -32,7 +33,7 @@ export default function Layout(props) {
           </Grid>
         </main>
       </Container>
-      <footer> Footer </footer>
+      <Footer />
     </React.Fragment>
   )
 }
