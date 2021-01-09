@@ -9,7 +9,6 @@ import Footer from './Footer'
 export default function Layout(props) {
   return (
     <React.Fragment>
-      <CssBaseline />
       <Container maxWidth="lg">
         <Header />
         <main>
