@@ -1,10 +1,12 @@
 import React from 'react'
 import NextLink from 'next/link'
+import NextImage from 'next/image'
 import Grid from '@material-ui/core/Grid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import Typography from '@material-ui/core/Typography'
+import styles from '../styles/Home.module.css'
 
 export default function Sidebar(props) {
   const linkList = [
@@ -35,6 +37,14 @@ export default function Sidebar(props) {
         alignItems="flex-start"
         spacing={2}
       >
+        <Grid item>
+          <NextImage
+            src="/icon.jpg"
+            width={200}
+            height={200}
+            className={styles.logo}
+          />
+        </Grid>
         <Grid item>
           <Typography variant="h6" gutterBottom>
             MENU
