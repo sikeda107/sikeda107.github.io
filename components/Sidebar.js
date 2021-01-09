@@ -55,7 +55,7 @@ export default function Sidebar(props) {
           </Typography>
           {socialList.map((social) => (
             <NextLink key={social.name} href={social.url}>
-              <a target="_blank">
+              <a target="_blank" rel="noopener noreferrer">
                 <Grid container direction="row" spacing={1} alignItems="center">
                   <Grid item>
                     <social.icon />
