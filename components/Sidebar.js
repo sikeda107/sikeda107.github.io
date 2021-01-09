@@ -1,6 +1,5 @@
 import React from 'react'
 import NextLink from 'next/link'
-import NextImage from 'next/image'
 import Grid from '@material-ui/core/Grid'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import FacebookIcon from '@material-ui/icons/Facebook'
@@ -38,11 +37,12 @@ export default function Sidebar(props) {
         spacing={2}
       >
         <Grid item>
-          <NextImage
+          <img
             src="/icon.jpg"
+            className={styles.logo}
+            alt="アイコン"
             width={200}
             height={200}
-            className={styles.logo}
           />
         </Grid>
         <Grid item>
